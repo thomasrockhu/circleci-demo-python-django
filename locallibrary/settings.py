@@ -41,8 +41,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #Add our new application 
+    'django_nose',
+    #Add our new application
     'catalog.apps.CatalogConfig', #This object was created for us in /catalog/apps.py
+]
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=catalog',
 ]
 
 MIDDLEWARE = [
